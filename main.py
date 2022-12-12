@@ -36,7 +36,7 @@ def trans():
 
 dicstr=str(dic)
 API_KEY = os.getenv('API_KEY')
-bot = telebot.TeleBot("5748030465:AAEK9fhnZcNqhvyqEYJMBS_1AzXjG4oRcbA")
+bot = telebot.TeleBot("Add your api key")
 
 
 @bot.message_handler(commands=['start', 'help'])
