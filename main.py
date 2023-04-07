@@ -36,7 +36,7 @@ def trans():
 
 dicstr=str(dic)
 API_KEY = os.getenv('API_KEY')
-bot = telebot.TeleBot("Add your api key")
+bot = telebot.TeleBot("5748030465:AAEK9fhnZcNqhvyqEYJMBS_1AzXjG4oRcbA")
 
 
 @bot.message_handler(commands=['start', 'help'])
@@ -58,16 +58,17 @@ def send_welcome(message):
 @bot.message_handler(commands=['set_mes'])
 def something(message):
 	bot.reply_to(message,'enter the message and after that keep \'_to_\' to enter the language')
-	@bot.message_handler(func=lambda msg: msg.text is not None)
-	def test(message1):
+	
+
+@bot.message_handler(func=lambda msg: msg.text is not None and not msg.text.startswith('/'))
+def test(message1):
 		global mes
 		global tolang
 		text=message1.text
 		lis=text.split('_to_')
 		mes=lis[0].strip()
-		tolang=lis[1].strip()
+		tolang=lis[1].strip()		
 
-		
 
 @bot.message_handler(commands=['recive'])
 def send_welcome(message):
